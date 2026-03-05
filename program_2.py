@@ -4,33 +4,42 @@
 # The function shell has been written out on line 30, (def display_larger_than_n_list)
 # and should display all of the numbers in the list that are greater than then number n.
 
+def larger_than_n(num_list, n):
+    for num in num_list:
+        if num > n:
+            print(num)
+
+
 def main():
-    # Declare local variables
-    number = 5
-    number_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    # Display the number.
-    print('Number:', number)
+    numbers = []
 
-    # Display the list of numbers.
-    print('List of numbers:')
-    print(f'{number_list}')
-    
-    # Display the list of numbers that are larger
-    # than the number.
-    print(f'List of numbers that are larger than {number}:')
-    
-    # Call the display_larger_than_n_list function,
-    # passing a number and number list as arguments.
-    display_larger_than_n_list(number, number_list)
+    size = int(input("How many numbers would you like to enter? "))
 
-# The display_larger_than_n_list function accepts two arguments:
-# a list, and a number. The function displays all of the numbers
-# in the list that are greater than the number.
-def display_larger_than_n_list(n, n_list):
-    # Write your code to display all of the numbers in the list that are greater than then number n. below
-    print('In display_larger_than_n_list')
-        
-# Call the main function.
-if __name__ == '__main__':
-    main()
+    for i in range(size):
+        value = float(input("Enter a number: "))
+        numbers.append(value)
+
+    n = float(input("Enter the comparison number (n): "))
+
+    print(f"\nNumbers greater than {n}:")
+    larger_than_n(numbers, n)
+
+
+main()
+
+"""
+Sample Output:
+
+How many numbers would you like to enter? 5
+Enter a number: 4
+Enter a number: 8
+Enter a number: 2
+Enter a number: 10
+Enter a number: 5
+Enter the comparison number (n): 5
+
+Numbers greater than 5:
+8
+10
+"""
